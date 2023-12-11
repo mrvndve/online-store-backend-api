@@ -16,6 +16,7 @@ const messages = require('../helpers/messages');
 const { orderStatus } = require('../utils');
 const moment = require('moment');
 const { groupBy, map, sumBy } = require('lodash');
+const { FRONTEND_DOMAIN } = require('../constants');
 
 const login = async (req, res, next) => {
   let user;
@@ -101,7 +102,7 @@ const forgotPassword = async (req, res, next) => {
   nodeMailer.sendEmail(
     user.email, 
     'Password Recovery', 
-    `We're sending you this email because you requested a password reset. Click on this link to create a new password. ${process.env.FRONTEND_DOMAIN}/admin/reset-password/${token}`,
+    `We're sending you this email because you requested a password reset. Click on this link to create a new password. ${FRONTEND_DOMAIN}/admin/reset-password/${token}`,
   );
 
   res.status(200).json({ message: `A message has been sent to ${req.body.email} with instructions to reset your password.` })

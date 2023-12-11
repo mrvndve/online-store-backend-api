@@ -9,6 +9,7 @@ const bcrypt = require('bcryptjs');
 const nodeMailer = require('../helpers/node-mailer');
 const { isEmpty } = require('lodash');
 const jwt = require('jsonwebtoken');
+const { FRONTEND_DOMAIN } = require('../constants');
 
 const getUsers = async (req, res, next) => {
   const {
@@ -106,7 +107,7 @@ const createUser = async (req, res, next) => {
   nodeMailer.sendEmail(
     newUser.email, 
     'Umal Marketing New User', 
-    `Greetings ${newUser.firstName}, Welcome to Umal Marketing ${branch.name} family!, please start by activating account by setting up your password. ${process.env.FRONTEND_DOMAIN}/admin/activate-account/${token}`,
+    `Greetings ${newUser.firstName}, Welcome to Bon Tea ${branch.name} family!, please start by activating account by setting up your password. ${FRONTEND_DOMAIN}/admin/activate-account/${token}`,
   );
   res.status(200).json({ message })
 };

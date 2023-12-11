@@ -10,16 +10,9 @@ mongoose.set('strictQuery', false);
 
 if (environment === 'development') {
   mongoose
-    // .connect(`mongodb://localhost:27017/${dbName}`, { useNewUrlParser: true, useUnifiedTopology: true })
-    // .then(() => {
-    //   console.log('MongoDB is running in development!');
-    // })
-    // .catch(err => {
-    //   console.log(err);
-    // });
-    .connect(`mongodb+srv://${dbUsername}:${dbPassword}@dbaas-db-10913461-73938a35.mongo.ondigitalocean.com/umal_marketing_db?tls=true&authSource=admin&replicaSet=dbaas-db-10913461`)
+    .connect(`mongodb://127.0.0.1:27017/${dbName}`, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
-      console.log('MongoDB is running in production!');
+      console.log('MongoDB is running in development!');
     })
     .catch(err => {
       console.log(err);

@@ -19,6 +19,7 @@ const { orderStatus } = require('../utils');
 const uniqid = require('uniqid');
 const Xendit = require('xendit-node');
 const Audit = require('../helpers/audit');
+const { FRONTEND_DOMAIN } = require('../constants');
 
 const getCustomers = async (req, res, next) => {
   let customers;
@@ -149,7 +150,7 @@ const register = async (req, res, next) => {
     nodeMailer.sendEmail(
       newCustomer.email, 
       'Email Verification',
-      `Please click this link for your email's verification. ${process.env.FRONTEND_DOMAIN}/verify-email/${token}`,
+      `Please click this link for your email's verification. ${FRONTEND_DOMAIN}/verify-email/${token}`,
     );
 
     await session.commitTransaction();
@@ -249,7 +250,7 @@ const forgotPassword = async (req, res, next) => {
   nodeMailer.sendEmail(
     customer.email, 
     'Password Recovery',
-    `We're sending you this email because you requested a password reset. Click on this link to create a new password. ${process.env.FRONTEND_DOMAIN}/reset-password/${token}`,
+    `We're sending you this email because you requested a password reset. Click on this link to create a new password. ${FRONTEND_DOMAIN}/reset-password/${token}`,
   );
 
   res.status(200).json({ message: `A message has been sent to ${req.body.email} with instructions to reset your password.` });
