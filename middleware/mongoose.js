@@ -19,7 +19,7 @@ if (environment === 'development') {
     });
 } else {
   mongoose
-    .connect(`mongodb+srv://${dbUsername}:${dbPassword}@dbaas-db-10913461-73938a35.mongo.ondigitalocean.com/${dbName}?tls=true&authSource=admin&replicaSet=dbaas-db-10913461`)
+    .connect(`mongodb+srv://${dbUsername}:${dbPassword}@umalmarketing.oue3smh.mongodb.net/${dbName}`, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
       console.log('MongoDB is running in production!');
     })
