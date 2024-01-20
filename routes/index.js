@@ -2,8 +2,8 @@ const bodyParser = require('body-parser');
 
 module.exports = (app) => {
   // Requests Body Parser
-  app.use(bodyParser.urlencoded({ limit: '100mb', extended: true }));
-  app.use(bodyParser.json({ limit: '100mb', extended: true }));
+  app.use(bodyParser.urlencoded({ limit: '500mb', extended: true }));
+  app.use(bodyParser.json({ limit: '500mb', extended: true }));
 
   // Requests CORS Handler
   app.use((req, res, next) => {
