@@ -117,7 +117,6 @@ const createProduct = async (req, res, next) => {
       tags: req.body.tags,
       specifications: req.body.specifications,
       brand: req.body.brand,
-      modelNumber: req.body.modelNumber,
       price: req.body.price,
       sellerPrice: req.body.sellerPrice,
       variations: req.body.variations,
@@ -190,12 +189,10 @@ const updateProduct = async (req, res, next) => {
     product.tags = req.body.tags;
     product.specifications = req.body.specifications;
     product.brand = req.body.brand;
-    product.modelNumber = req.body.modelNumber;
     product.price = req.body.price;
     product.sellerPrice = req.body.sellerPrice;
     product.variations = req.body.variations;
     product.isActive = req.body.isActive;
-    product.daysOfWarranty = req.body.daysOfWarranty;
 
     await product.save();
 

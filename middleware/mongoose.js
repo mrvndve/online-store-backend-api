@@ -10,7 +10,8 @@ mongoose.set('strictQuery', false);
 
 if (environment === 'development') {
   mongoose
-    .connect(`mongodb://127.0.0.1:27017/${dbName}`, { useNewUrlParser: true, useUnifiedTopology: true })
+    // .connect(`mongodb://127.0.0.1:27017/${dbName}`, { useNewUrlParser: true, useUnifiedTopology: true })
+    .connect(`mongodb+srv://${dbUsername}:${dbPassword}@umalmarketing.oue3smh.mongodb.net/${dbName}`, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
       console.log('MongoDB is running in development!');
     })

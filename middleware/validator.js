@@ -654,9 +654,6 @@ const productsValidationRules = {
     body('brand')
       .notEmpty()
       .withMessage('Brand field is required.'),
-    body('modelNumber')
-      .notEmpty()
-      .withMessage('Model number field is required.'),
     body('price')
       .notEmpty()
       .withMessage('Price field is required.'),
@@ -721,9 +718,6 @@ const productsValidationRules = {
     body('brand')
       .notEmpty()
       .withMessage('Brand field is required.'),
-    body('modelNumber')
-      .notEmpty()
-      .withMessage('Model number field is required.'),
     body('price')
       .notEmpty()
       .withMessage('Price field is required.'),

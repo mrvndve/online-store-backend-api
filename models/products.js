@@ -13,7 +13,6 @@ const productsSchema = new schema({
   categories: { type: Array },
   tags: { type: Array },
   brand: { type: mongoose.Types.ObjectId, required: true, ref: 'brands'},
-  modelNumber: { type: String, required: true, },
   price: {  type: Double, required: true },
   sellerPrice: { type: Double, required: true, },
   promotion: { type: Object },
@@ -22,7 +21,6 @@ const productsSchema = new schema({
   stocksBefore: { type: Number },
   stocksAfter: { type: Number },
   rating: { type: Double },
-  daysOfWarranty: { type: Number },
   isActive: { type: Boolean, required: true, },
 }, {             
   timestamps: {       
